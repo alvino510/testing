@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>KalkuTermo.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;KalkuTermo&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">kalkutermo</a> &gt; <span class="el_source">KalkuTermo.java</span></div><h1>KalkuTermo.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package kalkutermo;
+
+/**
+ *
+ * @author LENOVO
+ */
+<span class="fc" id="L12">public class KalkuTermo {</span>
+    public double calculateSuhu(Hitung hitung){
+<span class="fc" id="L14">      double suhu=0;</span>
+      //celsius
+<span class="fc bfc" id="L16" title="All 2 branches covered.">      if(hitung instanceof CelsiusR){</span>
+<span class="fc" id="L17">             CelsiusR celsiusr=(CelsiusR) hitung;</span>
+<span class="fc" id="L18">             suhu= 0.8*celsiusr.getSuhucr();</span>
+<span class="fc" id="L19">      }</span>
+<span class="fc bfc" id="L20" title="All 2 branches covered.">      else if(hitung instanceof CelsiusF){</span>
+<span class="fc" id="L21">             CelsiusF celsiusf=(CelsiusF) hitung;</span>
+<span class="fc" id="L22">             suhu= 1.8*celsiusf.getSuhucf()+32;</span>
+<span class="fc" id="L23">      }</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">      else if(hitung instanceof CelsiusK){</span>
+<span class="fc" id="L25">             CelsiusK celsiusk=(CelsiusK) hitung;</span>
+<span class="fc" id="L26">             suhu=celsiusk.getSuhuck()+273.15;</span>
+<span class="fc" id="L27">      }</span>
+      //farenheit
+<span class="fc bfc" id="L29" title="All 2 branches covered.">      else if(hitung instanceof FarenheitC){</span>
+<span class="fc" id="L30">        FarenheitC farenheitc=(FarenheitC) hitung;</span>
+<span class="fc" id="L31">        suhu=(farenheitc.getSuhufc()-32)/1.8;</span>
+<span class="fc" id="L32">      }</span>
+<span class="fc bfc" id="L33" title="All 2 branches covered.">      else if(hitung instanceof FarenheitR){</span>
+<span class="fc" id="L34">        FarenheitR farenheitr=(FarenheitR) hitung;</span>
+<span class="fc" id="L35">        suhu=(farenheitr.getSuhufr()-32)/2.25;</span>
+<span class="fc" id="L36">      }</span>
+<span class="fc bfc" id="L37" title="All 2 branches covered.">      else if(hitung instanceof FarenheitK){</span>
+<span class="fc" id="L38">        FarenheitK farenheitk=(FarenheitK) hitung;</span>
+<span class="fc" id="L39">        suhu=(farenheitk.getSuhufk()+459.67)/1.8;</span>
+<span class="fc" id="L40">      }</span>
+      //reamur
+<span class="fc bfc" id="L42" title="All 2 branches covered.">      else if(hitung instanceof ReamurC){</span>
+<span class="fc" id="L43">        ReamurC reamurc=(ReamurC) hitung;</span>
+<span class="fc" id="L44">        suhu=reamurc.getSuhurc()/0.8;</span>
+<span class="fc" id="L45">      }</span>
+<span class="fc bfc" id="L46" title="All 2 branches covered.">      else if(hitung instanceof ReamurF){</span>
+<span class="fc" id="L47">        ReamurF reamurf=(ReamurF) hitung;</span>
+<span class="fc" id="L48">        suhu=(reamurf.getSuhurf()*2.25)+32;</span>
+<span class="fc" id="L49">      }</span>
+<span class="fc bfc" id="L50" title="All 2 branches covered.">      else if(hitung instanceof ReamurK){</span>
+<span class="fc" id="L51">        ReamurK reamurk=(ReamurK) hitung;</span>
+<span class="fc" id="L52">        suhu=(reamurk.getSuhurk()/0.8)+273.15;</span>
+<span class="fc" id="L53">      }</span>
+      //kelvin
+<span class="fc bfc" id="L55" title="All 2 branches covered.">      else if(hitung instanceof KelvinC){</span>
+<span class="fc" id="L56">        KelvinC kelvinc=(KelvinC) hitung;</span>
+<span class="fc" id="L57">        suhu=kelvinc.getSuhukc()-273.15;</span>
+<span class="fc" id="L58">      }</span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">      else if(hitung instanceof KelvinR){</span>
+<span class="fc" id="L60">        KelvinR kelvinr=(KelvinR) hitung;</span>
+<span class="fc" id="L61">        suhu=(kelvinr.getSuhukr()-273.15)*0.8;</span>
+<span class="fc" id="L62">      }</span>
+<span class="pc bpc" id="L63" title="1 of 2 branches missed.">      else if(hitung instanceof KelvinF){</span>
+<span class="fc" id="L64">        KelvinF kelvinf=(KelvinF) hitung;</span>
+<span class="fc" id="L65">        suhu=(kelvinf.getSuhukf()*1.8)-459.67;</span>
+      }
+<span class="fc" id="L67">      return suhu;</span>
+  } 
+  
+  public static void main(String args[]){
+      //celsius
+<span class="nc" id="L72">      CelsiusR celsiusr=new CelsiusR(20);</span>
+<span class="nc" id="L73">      CelsiusF celsiusf=new CelsiusF(20);</span>
+<span class="nc" id="L74">      CelsiusK celsiusk=new CelsiusK(20);</span>
+      //reamur
+<span class="nc" id="L76">      ReamurC reamurc=new ReamurC(30);</span>
+<span class="nc" id="L77">      ReamurF reamurf=new ReamurF(30);</span>
+<span class="nc" id="L78">      ReamurK reamurk=new ReamurK(30);</span>
+      //farenheit
+<span class="nc" id="L80">      FarenheitC farenheitc=new FarenheitC(90);</span>
+<span class="nc" id="L81">      FarenheitR farenheitr=new FarenheitR(90);</span>
+<span class="nc" id="L82">      FarenheitK farenheitk=new FarenheitK(90);</span>
+      //kelvin
+<span class="nc" id="L84">      KelvinC kelvinc=new KelvinC(500);</span>
+<span class="nc" id="L85">      KelvinR kelvinr=new KelvinR(500);</span>
+<span class="nc" id="L86">      KelvinF kelvinf=new KelvinF(500);</span>
+      
+      
+<span class="nc" id="L89">      KalkuTermo tempObj=new KalkuTermo();</span>
+      //celsius
+<span class="nc" id="L91">      System.out.println(&quot;Convert celsius to reamur : &quot;+tempObj.calculateSuhu(celsiusr));</span>
+<span class="nc" id="L92">      System.out.println(&quot;Convert celsius to farenheit : &quot;+tempObj.calculateSuhu(celsiusf));</span>
+<span class="nc" id="L93">      System.out.println(&quot;Convert celsius to kelvin : &quot;+tempObj.calculateSuhu(celsiusk));</span>
+      //reamur
+<span class="nc" id="L95">      System.out.println(&quot;Convert reamur to celsius : &quot;+tempObj.calculateSuhu(reamurc));</span>
+<span class="nc" id="L96">      System.out.println(&quot;Convert reamur to farenheit : &quot;+tempObj.calculateSuhu(reamurf));</span>
+<span class="nc" id="L97">      System.out.println(&quot;Convert reamur to kelvin : &quot;+tempObj.calculateSuhu(reamurk));</span>
+      //farenheit
+<span class="nc" id="L99">      System.out.println(&quot;Convert farenheit to celsius : &quot;+tempObj.calculateSuhu(farenheitc));</span>
+<span class="nc" id="L100">      System.out.println(&quot;Convert farenheit to reamur : &quot;+tempObj.calculateSuhu(farenheitr));</span>
+<span class="nc" id="L101">      System.out.println(&quot;Convert farenheit to kelvin : &quot;+tempObj.calculateSuhu(farenheitk));</span>
+      //kelvin
+<span class="nc" id="L103">      System.out.println(&quot;Convert kelvin to celsius : &quot;+tempObj.calculateSuhu(kelvinc));</span>
+<span class="nc" id="L104">      System.out.println(&quot;Convert kelvin to reamur : &quot;+tempObj.calculateSuhu(kelvinr));</span>
+<span class="nc" id="L105">      System.out.println(&quot;Convert kelvin to farenheit : &quot;+tempObj.calculateSuhu(kelvinf));</span>
+<span class="nc" id="L106">  }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
