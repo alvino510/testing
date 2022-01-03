@@ -40,6 +40,7 @@ public class Celsius extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        txtReamur.setEditable(false);
         txtReamur.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtReamur.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,8 +57,10 @@ public class Celsius extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("Kelvin ");
 
+        txtKelvin.setEditable(false);
         txtKelvin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
+        txtFarenheit.setEditable(false);
         txtFarenheit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         txtCelsius.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -105,9 +108,7 @@ public class Celsius extends javax.swing.JFrame {
                                         .addComponent(txtReamur)
                                         .addComponent(txtCelsius)
                                         .addComponent(btnKonversi, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtKelvin, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtKelvin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(145, 145, 145)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
