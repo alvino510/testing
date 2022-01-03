@@ -88,7 +88,7 @@ public class KalkuTermo {
       
       KalkuTermo tempObj=new KalkuTermo();
       //celsius
-      System.out.println("Convert celsius to reamur : "+tempObj.calculateSuhu(celsiusr));
+      System.out.println("Convert dari Celcius ke Remur : "+tempObj.calculateSuhu(celsiusr));
       System.out.println("Convert celsius to farenheit : "+tempObj.calculateSuhu(celsiusf));
       System.out.println("Convert celsius to kelvin : "+tempObj.calculateSuhu(celsiusk));
       //reamur
