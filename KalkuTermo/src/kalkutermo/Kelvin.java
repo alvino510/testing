@@ -37,6 +37,7 @@ public class Kelvin extends javax.swing.JFrame {
         btnKonversi = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        back = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,6 +60,11 @@ public class Kelvin extends javax.swing.JFrame {
 
         txtFarenheit.setEditable(false);
         txtFarenheit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtFarenheit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFarenheitActionPerformed(evt);
+            }
+        });
 
         txtReamur.setEditable(false);
         txtReamur.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -89,6 +95,13 @@ public class Kelvin extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Kelvin");
 
+        back.setText("Back");
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -115,7 +128,9 @@ public class Kelvin extends javax.swing.JFrame {
                             .addComponent(txtFarenheit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(145, 145, 145)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(back)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -141,7 +156,9 @@ public class Kelvin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(txtFarenheit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(back)
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         pack();
@@ -157,8 +174,8 @@ public class Kelvin extends javax.swing.JFrame {
 
         kelvin = Float.parseFloat(txtKelvin.getText());
         celsius = (float) (kelvin -273.15);
-        farenheit = (float) ((kelvin -273.15)*0.8);
-        kelvin = (float) ((kelvin *1.8)-459.67);
+        reamur = (float) ((kelvin -273.15)*0.8);
+        farenheit = (float) ((kelvin *1.8)-459.67);
         txtCelsius.setText("" + celsius);
         txtReamur.setText("" + reamur);
         txtFarenheit.setText("" + farenheit);
@@ -172,6 +189,16 @@ public class Kelvin extends javax.swing.JFrame {
     private void txtReamurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtReamurActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtReamurActionPerformed
+
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        Home th = new Home();
+        th.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_backActionPerformed
+
+    private void txtFarenheitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFarenheitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFarenheitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -230,6 +257,7 @@ public class Kelvin extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton back;
     private javax.swing.JButton btnKonversi;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
