@@ -87,7 +87,7 @@ public class Kelvin extends javax.swing.JFrame {
         jLabel2.setText("Kelvin");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Celsius");
+        jLabel1.setText("Kelvin");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

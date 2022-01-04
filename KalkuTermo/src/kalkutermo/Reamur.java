@@ -82,7 +82,7 @@ public class Reamur extends javax.swing.JFrame {
         jLabel2.setText("Reamur");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Celsius");
+        jLabel1.setText("Reamur");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
